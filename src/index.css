@@ -1,0 +1,20 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    @font-face {
+        font-family : "SpaceMono";
+        src: url("src/assets/fonts/spacemono/spacemono/SpaceMono-Regular.ttf") format('truetype') ;
+    }
+    @font-face {
+        font-family : "SpaceMono Bold";
+        src: url("src/assets/fonts/spacemono/spacemono/SpaceMono-Bold.ttf") format('truetype');
+    }
+    h1 {
+        @apply font-heading
+    }
+    nav {
+        @apply font-body
+    }
+}
