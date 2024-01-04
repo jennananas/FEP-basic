@@ -11,10 +11,11 @@
         font-family : "SpaceMono Bold";
         src: url("src/assets/fonts/spacemono/spacemono/SpaceMono-Bold.ttf") format('truetype');
     }
+    * {
+        @apply font-body
+    }
     h1 {
         @apply font-heading
     }
-    nav {
-        @apply font-body
-    }
+    
 }
