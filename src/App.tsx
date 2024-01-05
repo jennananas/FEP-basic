@@ -1,11 +1,17 @@
-import Header from "./components/Header/Header"
+import Hero from "./components/Hero"
+import Presentation from "./components/Presentation"
+import ClientsPrez from "./components/ClientsPrez"
+import Engagements from "./components/Engagements"
 
 function App() {
 
   return (
-    <>
-      <Header></Header>
-    </>
+    <div className="flex flex-col gap-10">
+      <Hero />
+      <Presentation />
+      <ClientsPrez />
+      <Engagements />
+    </div>
   )
 }
 
