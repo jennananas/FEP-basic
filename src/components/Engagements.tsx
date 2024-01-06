@@ -29,9 +29,9 @@ export default function Engagements() {
         }
     ]
     return (
-        <div className="min-w-full">
-            <h2 className="font-heading uppercase text-3xl pb-20 px-20">Featured Engagements</h2>
-            <Carousel show={3.5} slide={3} swiping={true} useArrowKeys={true} className="flex gap-20">
+        <div className="min-w-full px-20">
+            <h2 className="font-heading uppercase text-3xl pb-20">Featured Engagements</h2>
+            <Carousel show={3.1} slide={3} swiping={true} useArrowKeys={true}>
                 {
                     engagements.map((engagement) => (
                         <EngagementCard key={engagement.name} engagement={engagement} />

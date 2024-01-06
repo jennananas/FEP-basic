@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      heading: ['SpaceMono Bold'],
-      body: ['SpaceMono']
+      heading: ['Familjen Grotesk Bold', 'SpaceMono Bold'],
+      body: ['Familjen Grotesk', 'SpaceMono']
     }
   }
   ,
