@@ -25,7 +25,6 @@ export default function Spotlight() {
                 pin: true,
                 start: "top-=100px",
                 end: "bottom bottom",
-                markers: true
             })
         })
         return () => ctx.revert()
