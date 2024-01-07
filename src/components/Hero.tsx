@@ -60,7 +60,7 @@ export default function Hero() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                     </svg>
                 </header>
-                <div id="content" className='relative grow border-red-600 border-4' onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                <div id="content" className='relative grow' onMouseEnter={textEnter} onMouseLeave={textLeave}>
                     <motion.div className={`
                 pointer-events-none
                 absolute top-0 left-0
