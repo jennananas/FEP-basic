@@ -3,6 +3,7 @@ import Presentation from "./components/Presentation"
 import ClientsPrez from "./components/ClientsPrez"
 import Engagements from "./components/Engagements"
 import Spotlight from "./components/Spotlight"
+import News from "./components/News"
 import { useEffect } from 'react'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <ClientsPrez />
       <Engagements />
       <Spotlight />
+      <News />
     </div>
   )
 }

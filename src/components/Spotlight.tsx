@@ -17,6 +17,7 @@ export default function Spotlight() {
                     start: "top-=500px top",
                     end: "bottom-=500px bottom",
                     scrub: true,
+                    markers: true
 
                 }
             });
@@ -25,6 +26,7 @@ export default function Spotlight() {
                 pin: true,
                 start: "top-=100px",
                 end: "bottom bottom",
+
             })
         })
         return () => ctx.revert()

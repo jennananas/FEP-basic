@@ -30,7 +30,7 @@ export default function Engagements() {
     ]
     return (
         <div className="min-w-full px-20">
-            <h2 className="font-heading uppercase text-3xl pb-20">Featured Engagements</h2>
+            <h2 className="pb-20">Featured Engagements</h2>
             <Carousel show={3.1} slide={3} swiping={true} useArrowKeys={true}>
                 {
                     engagements.map((engagement) => (
