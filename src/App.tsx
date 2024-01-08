@@ -4,6 +4,7 @@ import ClientsPrez from "./components/ClientsPrez"
 import Engagements from "./components/Engagements"
 import Spotlight from "./components/Spotlight"
 import News from "./components/News"
+import Footer from "./components/Footer"
 import { useEffect } from 'react'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <Engagements />
       <Spotlight />
       <News />
+      <Footer />
     </div>
   )
 }
