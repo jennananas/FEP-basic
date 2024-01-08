@@ -1,3 +1,4 @@
+
 export default function News() {
     const news: News[] = [
         {
@@ -32,8 +33,8 @@ export default function News() {
                 <button>View All</button>
             </header>
             <section className="flex flex-col gap-8">
-                {news.map((newsItem) => (
-                    <NewsItem {...newsItem} />
+                {news.map((newsItem, index) => (
+                    <NewsItem key={index} {...newsItem} />
                 ))}
 
             </section>
@@ -48,14 +49,15 @@ interface News {
 }
 
 function NewsItem({ src, title, date }: News) {
+
     return (
-        <div className="grid grid-cols-[500px_1fr_48px] grid-rows-2 border-t-[1px] pt-6 gap-4">
-            <div className="w-[500px] row-span-2">
-                <img src={src} alt="" className="h-full w-full" />
+        <div className="grid grid-cols-[500px_1fr_48px] grid-rows-2 border-t-[1px] pt-6 gap-4 group cursor-pointer">
+            <div className="w-[500px] row-span-2 overflow-hidden">
+                <img src={src} alt="" className="h-full w-full scale-105 group-hover:scale-100 ease-linear duration-300" />
             </div>
-            <h3 className="uppercase text-[48px]">{title}</h3>
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12">
+            <h3 className="uppercase text-[48px] group-hover:underline underline-offset-4">{title}</h3>
+            <span className=" group-hover:animate-slide">
+                <svg className="w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
 

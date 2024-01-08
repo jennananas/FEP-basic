@@ -6,7 +6,19 @@ export default {
     "./src/**/*.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        slide: 'slide 0.5s linear'
+      },
+      keyframes: {
+        slide: {
+          '0%': { transform: 'translateX(0%)', opacity: 1 },
+          '50%': { transform: 'translateX(100%)', opacity: 0 },
+          '50.01%': { transform: 'translateX(-100%)', opacity: 0 },
+          '100%': { transform: 'translateX(0%)', opacity: 1 },
+        }
+      }
+    },
     fontFamily: {
       heading: ['Familjen Grotesk Bold', 'SpaceMono Bold'],
       body: ['Familjen Grotesk', 'SpaceMono']
