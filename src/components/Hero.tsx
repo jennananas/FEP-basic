@@ -4,38 +4,7 @@ import { motion } from 'framer-motion';
 export default function Hero() {
     const navItems = ["work", "about", "news", "thinking", "pledge", "careers", "contact"]
 
-    const [mousePosition, setMousePosition] = useState({
-        x: 0,
-        y: 0
-    })
-    const [cursorVariant, setCursorVariant] = useState("default")
 
-    useEffect(() => {
-        const mouseMove = (e: MouseEvent) => {
-            setMousePosition({
-                x: e.clientX,
-                y: e.clientY
-            })
-        }
-        window.addEventListener("mousemove", mouseMove)
-        return () => {
-            window.removeEventListener("mousemove", mouseMove)
-        }
-    }, [])
-
-    const variants = {
-        text: {
-            x: mousePosition.x - 64,
-            y: mousePosition.y - 64
-        },
-        default: {
-            x: '850px',
-            y: '300px'
-
-        }
-    }
-    const textEnter = () => setCursorVariant("text")
-    const textLeave = () => setCursorVariant("default")
 
     return (
         <div className='min-h-dvh min-w-full relative cursor-none px-20'>
@@ -60,14 +29,13 @@ export default function Hero() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                     </svg>
                 </header>
-                <div id="content" className='relative grow' onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                <div id="content" className='relative grow'>
                     <motion.div className={`
                 pointer-events-none
                 absolute top-0 left-0
                 
                 `}
-                        variants={variants}
-                        animate={cursorVariant}
+
                     >
                         <div className='w-32 h-32 bg-neutral-50 rounded-full'>
                             <p className="flex justify-center items-center uppercase p-10 text-center font-bold">watch reel</p>

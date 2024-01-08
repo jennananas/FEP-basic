@@ -5,7 +5,9 @@ import Engagements from "./components/Engagements"
 import Spotlight from "./components/Spotlight"
 import News from "./components/News"
 import Footer from "./components/Footer"
+import Rewards from "./components/Rewards"
 import { useEffect } from 'react'
+
 
 function App() {
 
@@ -22,6 +24,7 @@ function App() {
   return (
     <div className="flex flex-col gap-10">
       <Hero />
+      <Rewards />
       <Presentation />
       <ClientsPrez />
       <Engagements />
