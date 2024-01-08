@@ -1,6 +1,5 @@
 import Hero from "./components/Hero"
 import Presentation from "./components/Presentation"
-import ClientsPrez from "./components/ClientsPrez"
 import Engagements from "./components/Engagements"
 import Spotlight from "./components/Spotlight"
 import News from "./components/News"
@@ -26,7 +25,6 @@ function App() {
       <Hero />
       <Rewards />
       <Presentation />
-      <ClientsPrez />
       <Engagements />
       <Spotlight />
       <News />

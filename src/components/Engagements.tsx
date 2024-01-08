@@ -1,7 +1,11 @@
 import EngagementCard from "./EngagementCard"
-import Client from "./interfaces/Client"
-import { Carousel } from '@trendyol-js/react-carousel';
+import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import Client from "./interfaces/ClientInterface";
+
+
 export default function Engagements() {
+    
     const engagements: Client[] = [
         {
             name: "Google",
@@ -28,17 +32,36 @@ export default function Engagements() {
             description: "Ongoing partnership providing strategy, branding, experience design, and development focused on bringing their mission and offerings to consumers through brand-led programs and platforms. "
         }
     ]
+
     return (
         <div className="min-w-full px-20">
             <h2 className="pb-20">Featured Engagements</h2>
-            <Carousel show={3.1} slide={3} swiping={true} useArrowKeys={true}>
-                {
-                    engagements.map((engagement) => (
-                        <EngagementCard key={engagement.name} engagement={engagement} />
-                    ))
-                }
+            <div className="relative h-[300px]">
+                <CarouselProvider
+                    naturalSlideWidth={40}
+                    naturalSlideHeight={100}
+                    totalSlides={engagements.length}
+                    visibleSlides={3.1}
+                >
+                    <Slider className="slider">
+                        {engagements.map((engagement, index) => (
+                            <Slide key={index} index={index}>
+                                <EngagementCard engagement={engagement} />
+                            </Slide>
 
-            </Carousel>
+
+                        ))}
+
+                    </Slider>
+
+                </CarouselProvider>
+
+
+            </div>
+
+
+
+
         </div>
     )
 }

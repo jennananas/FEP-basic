@@ -27,7 +27,7 @@ export default function News() {
         }
     ]
     return (
-        <div className="px-20 flex flex-col gap-10">
+        <div className="px-20 flex flex-col gap-10 py-40">
             <header className="flex justify-between">
                 <h2>Featured News</h2>
                 <button>View All</button>
