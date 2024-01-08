@@ -14,13 +14,23 @@ export default function Spotlight() {
                 color: '#f9cdcd',
                 scrollTrigger: {
                     trigger: section.current,
-                    start: "top-=500px top",
+                    start: "top-=300px top",
                     end: "bottom-=500px bottom",
                     scrub: true,
                     markers: true
 
                 }
             });
+            gsap.to(document.documentElement, {
+                backgroundColor: "white",
+                color: 'black',
+                scrollTrigger: {
+                    trigger: section.current,
+                    start: "bottom+=500px bottom",
+                    markers: true,
+                    scrub: true
+                }
+            })
             ScrollTrigger.create({
                 trigger: leftDiv.current,
                 pin: true,
