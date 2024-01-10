@@ -34,7 +34,7 @@ export default function Engagements() {
     ]
 
     return (
-        <div className="min-w-full px-20">
+        <div className="min-w-full px-20  relative top-52">
             <h2 className="pb-20">Featured Engagements</h2>
             <div className="relative h-[300px]">
                 <CarouselProvider

@@ -9,7 +9,7 @@ export default function Spotlight() {
 
 
     return (
-        <div ref={section} className="flex px-20 py-40">
+        <div ref={section} className="flex px-20 py-40  relative top-52">
             <div ref={leftDiv} className="w-1/2" >
                 <p id="pin" className="text-[120px] font-bold leading-[6rem] pb-8">BASIC/DEPT® HELPS BRANDS ● CONNECT W/ CULTURE</p>
                 <p>ADWEEK AGENCY SPOTLIGHT</p>
