@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 export default function useMousePosition() {
     const [mousePosition, setMousePosition] = useState(
         {
-            mouseX: 0,
-            mouseY: 0
+            mouseX: window.innerWidth / 2,
+            mouseY: window.innerHeight / 2
         })
 
     useEffect(() => {

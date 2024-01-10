@@ -25,12 +25,15 @@ function App() {
     <div className="flex flex-col">
       <Header />
       <Hero />
-      <Rewards />
-      <Presentation />
-      <Engagements />
-      <Spotlight />
-      <News />
-      <Footer />
+      <div className="relative top-[700px]">
+        <Rewards />
+        <Presentation />
+        <Engagements />
+        <Spotlight />
+        <News />
+        <Footer />
+      </div>
+
     </div>
   )
 }
