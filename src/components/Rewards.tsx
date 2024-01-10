@@ -1,4 +1,7 @@
 export default function Rewards() {
+
+
+
     return (
         <div className="flex justify-center items-center gap-80 mx-20 border-b-[1px] py-48 cursor-pointer relative">
             <div className="w-[200px] grid grid-rows-[2fr_1fr] gap-12 group">

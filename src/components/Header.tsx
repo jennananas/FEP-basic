@@ -1,12 +1,33 @@
 import useScrollDirection from './hooks/ScrollDirection';
-
+import { useLayoutEffect, useRef } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 export default function Header() {
     const navItems = ["work", "about", "news", "thinking", "pledge", "careers", "contact"]
     const scrollDirection = useScrollDirection()
 
+    const header = useRef(null)
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.to(header.current, {
+            color: "black",
+            backgroundColor: "white",
+            opacity: 1,
+            "--bgColor": "black",
+            scrollTrigger: {
+                trigger: header.current,
+                start: 'top+=900px top',
+                end: 'top+=900px top',
+                scrub: true,
+                markers: true,
+            }
+        });
+
+    }, [])
     return (
-        <header className={`flex justify-between text-neutral-50 cursor-pointer pt-10 pb-20 px-20
+        <header ref={header} className={`flex justify-between text-neutral-50 cursor-pointer pt-10 pb-20 px-20
         h-28 z-10
         sticky ${scrollDirection === "down" ? "-top-32" : "top-0"}
         transition-all duration-200
@@ -14,11 +35,11 @@ export default function Header() {
             <h1 className="uppercase z-10 text-2xl">Basic/Dept</h1>
             <nav className="flex gap-10 z-10">
                 {navItems.map((item, index) => (
-                    <li className="list-none uppercase 
-                        relative hover:text-neutral-50
+                    <li className="navlist list-none uppercase 
+                        relative 
                         after:content-['']
-                        after:abosulte after:block after:w-100 after:h-[1px] after:bottom-0 after:left-0
-                        after:scale-x-0 after:ease-linear after:transition-transform after:bg-neutral-50
+                        after:block after:w-100 after:h-[1px] after:bottom-0 after:left-0
+                        after:scale-x-0 after:ease-linear after:transition-transform after:[backgroundColor:var(--bgColor)]
                         hover:after:scale-x-100
                         " key={index}>{item}</li>
                 ))}

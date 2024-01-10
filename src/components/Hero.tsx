@@ -3,6 +3,7 @@ import useMousePosition from './hooks/MousePosition';
 import Mask from '../assets/images/mask.svg'
 import { useState } from 'react'
 
+
 export default function Hero() {
     const { mouseX, mouseY } = useMousePosition()
     const [variant, setVariant] = useState("moving")
@@ -24,7 +25,7 @@ export default function Hero() {
             <video autoPlay muted loop className="object-cover h-full w-full">
                 <source src="https://cdn.sanity.io/files/8nn8fua5/production/c6fb986a862cbe643c40cbdd0318ebc495efb187.mp4" type="video/mp4" />
             </video>
-            <div className='w-full h-full absolute top-28'
+            <div className='w-full h-full absolute top-28 cursor-none'
                 onMouseLeave={() => setVariant("default")}
                 onMouseEnter={() => setVariant("moving")}>
                 <motion.div className="w-24 relative -top-28"

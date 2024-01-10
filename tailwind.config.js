@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        "bgColor": "var(--bgColor)"
+      },
       animation: {
         slide: 'slide 0.5s linear'
       },

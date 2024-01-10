@@ -3,7 +3,12 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;700&display=swap');
 
+
+:root {
+        --bgColor : white;
+    }
 @layer base {
+    
     @font-face {
         font-family : "SpaceMono";
         src: url("src/assets/fonts/spacemono/spacemono/SpaceMono-Regular.ttf") format('truetype') ;
