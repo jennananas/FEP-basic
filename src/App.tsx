@@ -5,6 +5,7 @@ import Spotlight from "./components/Spotlight"
 import News from "./components/News"
 import Footer from "./components/Footer"
 import Rewards from "./components/Rewards"
+import Header from "./components/Header"
 import { useEffect } from 'react'
 
 
@@ -21,7 +22,8 @@ function App() {
   }, [])
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col">
+      <Header />
       <Hero />
       <Rewards />
       <Presentation />

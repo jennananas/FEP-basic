@@ -11,7 +11,7 @@ export default function useScrollDirection() {
             const scrollY = window.scrollY;
 
             const direction = scrollY > lastScrollY ? "down" : "up";
-            console.log(direction)
+
             if (direction !== scrollDirection) {
                 setScrollDirection(direction);
             }

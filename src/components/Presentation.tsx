@@ -1,7 +1,7 @@
 export default function Presentation() {
 
     return (
-        <div className="min-w-full p-20">
+        <div className="min-w-full p-20 relative">
             <div className="grid grid-cols-2 gap-x-48">
                 <div className="flex flex-col justify-between">
                     <p className="text-[36px] leading-tight">

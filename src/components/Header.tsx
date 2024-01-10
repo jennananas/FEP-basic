@@ -6,8 +6,8 @@ export default function Header() {
     const scrollDirection = useScrollDirection()
 
     return (
-        <header className={`flex justify-between text-neutral-50 cursor-pointer py-10 px-20
-        h-28 bg-neutral-950 backdrop-blur-xl bg-opacity-20
+        <header className={`flex justify-between text-neutral-50 cursor-pointer pt-10 pb-20 px-20
+        h-28 z-10
         sticky ${scrollDirection === "down" ? "-top-32" : "top-0"}
         transition-all duration-200
         `}>

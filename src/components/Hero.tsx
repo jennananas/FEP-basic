@@ -1,37 +1,41 @@
 import { motion } from 'framer-motion';
-import Header from './Header';
-export default function Hero() {
+import useMousePosition from './hooks/MousePosition';
+import Mask from '../assets/images/mask.svg'
+import { useState } from 'react'
 
+export default function Hero() {
+    const { mouseX, mouseY } = useMousePosition()
+    const [variant, setVariant] = useState("moving")
+
+    const variants = {
+        default: {
+            x: window.innerWidth / 2,
+            y: window.innerHeight / 2
+        },
+        moving: {
+            x: mouseX - 48,
+            y: mouseY - 48
+        }
+
+    }
 
     return (
-        <div className='min-h-dvh min-w-full relative'>
-            <video autoPlay muted loop className="absolute top-0 left-0 object-cover z-0 h-full w-full">
-                <source src="src/assets/images/pexels_videos_1966382(2160p).mp4" type="video/mp4" />
+        <div className='h-screen w-full absolute top-0 left-0'>
+            <video autoPlay muted loop className="object-cover h-full w-full">
+                <source src="https://cdn.sanity.io/files/8nn8fua5/production/c6fb986a862cbe643c40cbdd0318ebc495efb187.mp4" type="video/mp4" />
             </video>
-            <div className=" flex flex-col min-h-dvh" >
-                <Header />
-                <div id="content" className='relative grow'>
-                    <motion.div className={`
-                pointer-events-none
-                absolute top-0 left-0
-                
-                `}
-
-                    >
-                        <div className='w-32 h-32 bg-neutral-50 rounded-full'>
-                            <p className="flex justify-center items-center uppercase p-10 text-center font-bold">watch reel</p>
-                        </div>
-                        <p className='uppercase text-neutral-50 font-bold text-center'>basic/dept</p>
-                    </motion.div>
-
-
-                </div>
-
+            <div className='w-full h-full absolute top-28'
+                onMouseLeave={() => setVariant("default")}
+                onMouseEnter={() => setVariant("moving")}>
+                <motion.div className="w-24 relative -top-28"
+                    variants={variants}
+                    animate={variant}
+                    transition={{ type: 'tween', ease: "backOut" }}>
+                    <img src={Mask} alt="" />
+                </motion.div>
             </div>
 
-        </div>
-
-
+        </div >
 
     )
 }
