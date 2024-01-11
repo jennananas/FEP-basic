@@ -8,18 +8,22 @@ export default function Spotlight() {
     const leftDiv = useRef(null)
     const btn = useRef(null)
 
+
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
+        const buttons = document.querySelectorAll("button");
         const ctx = gsap.context(() => {
             gsap.to(document.body, {
-                color: "pink",
-                backgroundColor: "black",
+                color: "#f9cdcd",
+                backgroundColor: "#252422",
                 scrollTrigger: {
                     trigger: section.current,
-                    start: 'top-=200px',
-                    end: 'top',
+                    start: 'top-=100px',
+                    end: 'top top',
                     scrub: true,
-                    endTrigger: 'bottom bottom'
+                    markers: true,
+                    onEnter: () => buttons.forEach(btn => btn.classList.add("scrolled-btn")),
+                    onLeaveBack: () => buttons.forEach(btn => btn.classList.remove("scrolled-btn"))
                 }
             })
             ScrollTrigger.create({
@@ -27,7 +31,7 @@ export default function Spotlight() {
                 start: 'top-=100px top',
                 end: 'bottom 50%+=300px',
                 scrub: true,
-                markers: true,
+
                 pin: true
             })
         })
@@ -39,7 +43,7 @@ export default function Spotlight() {
             <div ref={leftDiv} className="w-1/2" >
                 <p id="pin" className="text-[120px] font-bold leading-[6rem] pb-8">BASIC/DEPT® HELPS BRANDS ● CONNECT W/ CULTURE</p>
                 <p ref={btn}>ADWEEK AGENCY SPOTLIGHT</p>
-                <button className="mt-32">About Us</button>
+                <button className={`mt-32`}>About Us</button>
             </div>
             <div id="right">
                 <video autoPlay muted loop className="w-full h-full">
