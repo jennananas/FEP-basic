@@ -21,7 +21,7 @@ export default function Header() {
                 start: 'top+=900px top',
                 end: 'top+=900px top',
                 scrub: true,
-                markers: true,
+
             }
         });
 
