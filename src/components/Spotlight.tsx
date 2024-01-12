@@ -13,27 +13,50 @@ export default function Spotlight() {
         gsap.registerPlugin(ScrollTrigger)
         const buttons = document.querySelectorAll("button");
         const ctx = gsap.context(() => {
-            gsap.to(document.body, {
-                color: "#f9cdcd",
-                backgroundColor: "#252422",
-                scrollTrigger: {
-                    trigger: section.current,
-                    start: 'top-=100px',
-                    end: 'top top',
-                    scrub: true,
-                    markers: true,
-                    onEnter: () => buttons.forEach(btn => btn.classList.add("scrolled-btn")),
-                    onLeaveBack: () => buttons.forEach(btn => btn.classList.remove("scrolled-btn"))
-                }
-            })
+
             ScrollTrigger.create({
                 trigger: leftDiv.current,
                 start: 'top-=100px top',
                 end: 'bottom 50%+=300px',
                 scrub: true,
-
                 pin: true
             })
+            ScrollTrigger.create({
+
+                trigger: section.current,
+                start: "top 50%",
+                end: "bottom 0%",
+
+                onEnter: () => {
+                    gsap.to('body', { duration: 1.0, backgroundColor: '#252422', color: '#f9cdcd' })
+                    buttons.forEach(btn => btn.classList.add("scrolled-btn"))
+                },
+
+                onLeaveBack: () => {
+                    gsap.to('body', { duration: 1.0, backgroundColor: '#f4f4f4', color: '#252422' })
+                    buttons.forEach(btn => btn.classList.remove("scrolled-btn"))
+                },
+
+
+            })
+            ScrollTrigger.create({
+                trigger: section.current,
+                start: "bottom 0%",
+                end: "",
+
+                onEnter: () => {
+                    gsap.to('body', { duration: 1.0, backgroundColor: '#f4f4f4', color: '#252422' })
+                    buttons.forEach(btn => btn.classList.remove("scrolled-btn"))
+                },
+                onLeaveBack: () => {
+                    gsap.to('body', { duration: 1.0, backgroundColor: '#252422', color: '#f9cdcd' })
+                    buttons.forEach(btn => btn.classList.add("scrolled-btn"))
+
+                },
+
+
+            })
+
         })
         return () => ctx.revert()
     }, [])
