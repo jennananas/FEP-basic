@@ -27,7 +27,7 @@ export default function Header() {
 
     }, [])
     return (
-        <header ref={header} className={`flex justify-between text-neutral-50 cursor-pointer pt-10 pb-20 px-20
+        <header ref={header} className={`flex justify-between text-white cursor-pointer pt-10 pb-20 px-20
         h-28 z-10
         sticky ${scrollDirection === "down" ? "-top-32" : "top-0"}
         transition-all duration-200

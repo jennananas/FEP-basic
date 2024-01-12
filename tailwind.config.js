@@ -6,6 +6,11 @@ export default {
     "./src/**/*.html"
   ],
   theme: {
+    colors: {
+      black: '#252422',
+      white: '#f4f4f4',
+      pink: '#f9cdcd'
+    },
     extend: {
       backgroundColor: {
         "bgColor": "var(--bgColor)"
