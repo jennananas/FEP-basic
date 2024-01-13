@@ -7,7 +7,10 @@ export default {
   ],
   theme: {
     colors: {
-      black: '#252422',
+      black: {
+        500: '#a5a5a5',
+        950: '#252422'
+      },
       white: '#f4f4f4',
       pink: '#f9cdcd'
     },

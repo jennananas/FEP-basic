@@ -27,7 +27,7 @@
         @apply font-heading uppercase text-[40px] w-1 leading-none
     }
     button {
-        @apply text-black uppercase text-xs border border-black px-8 py-2 rounded-3xl font-bold h-fit
+        @apply text-black-950 uppercase text-xs border border-black-950 px-8 py-2 rounded-3xl font-bold h-fit
     }
     button.scrolled-btn {
         @apply text-pink border-pink

@@ -1,11 +1,13 @@
 import EngagementCard from "./EngagementCard"
-import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
 import Client from "./interfaces/ClientInterface";
+import Slider from 'react-slick'
+import { useState } from 'react'
+
+
 
 
 export default function Engagements() {
-    
+
     const engagements: Client[] = [
         {
             name: "Google",
@@ -32,30 +34,32 @@ export default function Engagements() {
             description: "Ongoing partnership providing strategy, branding, experience design, and development focused on bringing their mission and offerings to consumers through brand-led programs and platforms. "
         }
     ]
+    const settings = {
+        arrows: false,
+        infinite: false,
+        className: "center",
+        centerPadding: "60px",
+        swipeToSlide: true,
+        speed: 500,
+        slidesToShow: 3,
+        afterChange: (current: number) => {
+            setProgress(100 / (engagements.length - slideToShow + 1) * (current + 1))
+        }
+    }
+    const slideToShow = 3 /* Use useState for responsive */
+    const [progress, setProgress] = useState(100 / (engagements.length - slideToShow + 1))
+
 
     return (
         <div className="min-w-full px-20">
             <h2 className="pb-20">Featured Engagements</h2>
-            <div className="relative h-[300px]">
-                <CarouselProvider
-                    naturalSlideWidth={40}
-                    naturalSlideHeight={100}
-                    totalSlides={engagements.length}
-                    visibleSlides={3.1}
-                >
-                    <Slider className="slider">
-                        {engagements.map((engagement, index) => (
-                            <Slide key={index} index={index}>
-                                <EngagementCard engagement={engagement} />
-                            </Slide>
-
-
-                        ))}
-
-                    </Slider>
-
-                </CarouselProvider>
-
+            <div className="relative">
+                <Slider {...settings}>
+                    {engagements.map((engagement, index) => <EngagementCard engagement={engagement} key={index} />)}
+                </Slider>
+                <div className="h-[2px] bg-black-500 w-full absolute -bottom-10 left-0">
+                    <div className="bg-black-950 absolute h-full transition-all" style={{ width: `${progress}%` }}></div>
+                </div>
 
             </div>
 
