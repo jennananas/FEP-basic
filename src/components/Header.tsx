@@ -12,10 +12,10 @@ export default function Header() {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
         gsap.to(header.current, {
-            color: "black",
-            backgroundColor: "white",
+            color: "#252422",
+            backgroundColor: "#f4f4f4",
             opacity: 1,
-            "--bgColor": "black",
+            "--bgColor": "#252422",
             scrollTrigger: {
                 trigger: header.current,
                 start: 'top+=900px top',

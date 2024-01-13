@@ -22,18 +22,16 @@ export default function Spotlight() {
                 pin: true
             })
             ScrollTrigger.create({
-
                 trigger: section.current,
-                start: "top 50%",
-                end: "bottom 0%",
+                start: "top 20%",
+                end: "bottom 50%",
 
                 onEnter: () => {
-                    gsap.to('body', { duration: 1.0, backgroundColor: '#252422', color: '#f9cdcd' })
+                    gsap.to(['body', 'header'], { duration: 1.0, backgroundColor: '#252422', color: '#f9cdcd' })
                     buttons.forEach(btn => btn.classList.add("scrolled-btn"))
                 },
-
                 onLeaveBack: () => {
-                    gsap.to('body', { duration: 1.0, backgroundColor: '#f4f4f4', color: '#252422' })
+                    gsap.to(['body', 'header'], { duration: 1.0, backgroundColor: '#f4f4f4', color: '#252422' })
                     buttons.forEach(btn => btn.classList.remove("scrolled-btn"))
                 },
 
@@ -42,14 +40,14 @@ export default function Spotlight() {
             ScrollTrigger.create({
                 trigger: section.current,
                 start: "bottom 0%",
-                end: "",
-
+                end: "bottom bottom",
+                markers: true,
                 onEnter: () => {
-                    gsap.to('body', { duration: 1.0, backgroundColor: '#f4f4f4', color: '#252422' })
+                    gsap.to(['body', 'header'], { duration: 1.0, backgroundColor: '#f4f4f4', color: '#252422' })
                     buttons.forEach(btn => btn.classList.remove("scrolled-btn"))
                 },
                 onLeaveBack: () => {
-                    gsap.to('body', { duration: 1.0, backgroundColor: '#252422', color: '#f9cdcd' })
+                    gsap.to(['body', 'header'], { duration: 1.0, backgroundColor: '#252422', color: '#f9cdcd' })
                     buttons.forEach(btn => btn.classList.add("scrolled-btn"))
 
                 },

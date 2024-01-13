@@ -28,10 +28,10 @@ export default function News() {
     ]
     return (
         <div className="px-20 flex flex-col gap-10 pt-20 pb-64">
-            <header className="flex justify-between">
+            <section className="flex justify-between">
                 <h2>Featured News</h2>
                 <button>View All</button>
-            </header>
+            </section>
             <section className="flex flex-col gap-8">
                 {news.map((newsItem, index) => (
                     <NewsItem key={index} {...newsItem} />
