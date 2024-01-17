@@ -41,7 +41,6 @@ export default function Spotlight() {
                 trigger: section.current,
                 start: "bottom 0%",
                 end: "bottom bottom",
-                markers: true,
                 onEnter: () => {
                     gsap.to(['body', 'header'], { duration: 1.0, backgroundColor: '#f4f4f4', color: '#252422' })
                     buttons.forEach(btn => btn.classList.remove("scrolled-btn"))
