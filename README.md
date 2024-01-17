@@ -1,5 +1,5 @@
 # Basic Clone
-View live : https://basic-clone.netlify.app/
+https://basic-clone.netlify.app/
 
 ## Frontend Practice : Basic
 Reproduction du design la page d’accueil de l’agence Basic. Ce projet me permet de découvrir les scroll events, les éléments draggables et l’utilisation de GSAP et du scroll Locomotive.
