@@ -13,7 +13,7 @@ export default function Header() {
         gsap.registerPlugin(ScrollTrigger)
         gsap.to(header.current, {
             color: "#252422",
-            backgroundColor: "#f4f4f4",
+            backgroundColor: "white",
             opacity: 1,
             "--bgColor": "#252422",
             scrollTrigger: {
@@ -21,7 +21,6 @@ export default function Header() {
                 start: 'top+=900px top',
                 end: 'top+=900px top',
                 scrub: true,
-
             }
         });
 

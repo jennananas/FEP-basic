@@ -5,9 +5,7 @@ import { useState } from 'react'
 
 
 
-
 export default function Engagements() {
-
     const engagements: Client[] = [
         {
             name: "Google",
@@ -49,23 +47,22 @@ export default function Engagements() {
     const slideToShow = 3 /* Use useState for responsive */
     const [progress, setProgress] = useState(100 / (engagements.length - slideToShow + 1))
 
-
     return (
-        <div className="min-w-full px-20">
+        <div className="min-w-full px-20 relative" >
             <h2 className="pb-20">Featured Engagements</h2>
             <div className="relative">
                 <Slider {...settings}>
                     {engagements.map((engagement, index) => <EngagementCard engagement={engagement} key={index} />)}
                 </Slider>
-                <div className="h-[2px] bg-black-500 w-full absolute -bottom-10 left-0">
+                <div className="h-[2px] bg-black-500 w-full relative -bottom-10 left-0">
                     <div className="bg-black-950 absolute h-full transition-all" style={{ width: `${progress}%` }}></div>
                 </div>
-
             </div>
 
 
 
 
-        </div>
+
+        </div >
     )
 }
